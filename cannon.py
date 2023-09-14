@@ -20,11 +20,12 @@ targets = []
 
 def tap(x, y):
     """Respond to screen tap."""
+    #Disminuimos el divisor para aumentar la velocidad del proyectil
     if not inside(ball):
         ball.x = -199
         ball.y = -199
-        speed.x = (x + 200) / 25
-        speed.y = (y + 200) / 25
+        speed.x = (x + 200) / 10
+        speed.y = (y + 200) / 10
 
 
 def inside(xy):
@@ -53,9 +54,9 @@ def move():
         y = randrange(-150, 150)
         target = vector(200, y)
         targets.append(target)
-
+    #Aumentamos aqui el valor de target.x para aumentar velocidad de balones
     for target in targets:
-        target.x -= 0.5
+        target.x -= 1.5
 
     if inside(ball):
         speed.y -= 0.35
