@@ -71,9 +71,14 @@ def move():
 
     draw()
 
+    # Reposicionar objetivos que salieron de la ventana
     for target in targets:
         if not inside(target):
-            return
+            # Reposiciona el objetivo en el lado derecho de la ventana
+            target.x = 200
+
+            # Asigna una nueva posición vertical aleatoria
+            target.y = randrange(-150, 150)
 
     ontimer(move, 50)
 
